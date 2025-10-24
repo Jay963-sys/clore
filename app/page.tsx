@@ -4,12 +4,16 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div
-      className="min-h-screen w-full bg-cover bg-center bg-no-repeat relative"
-      style={{
-        backgroundImage: "url('/brand/clore.svg')",
-      }}
-    >
+    <div className="min-h-screen w-full relative">
+      {/* Background image layer with brightness */}
+      <div
+        className="absolute inset-0 bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('https://wallet.clore.ai/background.svg')",
+          backgroundSize: "75%",
+          filter: "brightness(2.5) ", // Adjust these values
+        }}
+      />
       {/* Overlay to darken the background */}
       <div className="absolute inset-0 bg-black/70"></div>
 
@@ -35,7 +39,7 @@ export default function Home() {
           </Link>
 
           <button
-            className="..."
+            className="w-full bg-grey text-white font-medium py-3 rounded-lg transition mb-3"
             onClick={() => (window.location.href = "/recover")}
           >
             Recover an existing wallet
